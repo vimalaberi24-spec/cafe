@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Menu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="glass">
+  <h1>Our Menu</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="cart">🛒 <span id="count">0</span></div>
+
+<section class="menu">
+
+  <div class="card">
+    <h3>Espresso</h3>
+    <p>₹100</p>
+    <button onclick="addToCart('Espresso')">Add</button>
+  </div>
+
+  <div class="card">
+    <h3>Mocha</h3>
+    <p>₹160</p>
+    <button onclick="addToCart('Mocha')">Add</button>
+  </div>
+
+  <div class="card">
+    <h3>Cold Brew</h3>
+    <p>₹180</p>
+    <button onclick="addToCart('Cold Brew')">Add</button>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
