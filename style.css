@@ -1,96 +1,147 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #121212;
-  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #333;
 }
 
-.glass {
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.6);
-  padding: 15px;
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  padding: 1rem 2rem;
+}
+.navbar .logo { color: #fff; font-size: 1.8rem; font-weight: bold; }
+.nav-links { list-style: none; display: flex; }
+.nav-links li { margin-left: 25px; }
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: #ff9800; }
+
+/* Hero */
+.hero {
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+}
+.hero h1 { font-size: 3.5rem; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.2rem; margin-top: 10px; }
+.hero .btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #ff9800;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.3s, background 0.3s;
+}
+.hero .btn:hover { background: #e68900; transform: scale(1.05); }
+
+/* Products */
+.products, .featured {
+  padding: 60px 20px;
   text-align: center;
 }
-
-nav a {
-  color: #ff9800;
-  margin: 10px;
-  text-decoration: none;
+.products h2 { font-size: 2rem; margin-bottom: 20px; }
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-nav a:hover {
-  color: white;
+.product-card {
+  background: #fff;
+  padding: 20px;
+  width: 250px;
+  margin: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.product-card img { width: 100%; border-radius: 8px; }
+.product-card h3 { margin: 15px 0; font-size: 1.2rem; }
+.product-card p { font-weight: bold; color: #ff9800; }
+.product-card button {
+  background: #203a43;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+.product-card button:hover { background: #2c5364; }
 
-.hero {
-  height: 90vh;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085') center/cover;
+/* Cart */
+.cart {
+  padding: 60px 20px;
+  text-align: center;
+}
+#cartItems div {
+  background: #fff;
+  margin: 10px auto;
+  padding: 15px;
+  width: 60%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+#cartTotal { font-weight: bold; margin-top: 20px; font-size: 1.2rem; }
+
+/* Checkout */
+.checkout {
+  padding: 60px 20px;
+  text-align: center;
+}
+.checkout form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero button {
-  padding: 12px;
-  background: #ff9800;
-  border: none;
-  cursor: pointer;
-}
-
-.features {
-  display: flex;
-  justify-content: space-around;
+  width: 50%;
+  margin: auto;
+  background: #fff;
   padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
-.box {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
+.checkout input {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
-
-.menu {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: #1e1e1e;
-  padding: 20px;
-  margin: 15px;
-  border-radius: 10px;
-  width: 200px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.1);
-}
-
-button {
+.checkout button {
   background: #ff9800;
   border: none;
-  padding: 8px;
+  padding: 12px;
+  color: #fff;
   cursor: pointer;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s;
 }
+.checkout button:hover { background: #e68900; }
 
-.cart {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-}
-
-.contact form {
+/* Footer */
+footer {
+  background: #0f2027;
+  color: #fff;
   text-align: center;
-  padding: 20px;
-}
-
-input, textarea {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 70%;
+  padding: 25px;
+  margin-top: 40px;
 }
